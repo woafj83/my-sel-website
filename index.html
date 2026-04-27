@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social-Emotional Learning for 3rd and 4th Grade Educators</title>
+  <style>
+    :root {
+      --navy: #1f3c5b;
+      --blue: #4f83c2;
+      --sky: #eaf4ff;
+      --gold: #f4c95d;
+      --mint: #dff4ea;
+      --coral: #ffe3dd;
+      --lavender: #f2edff;
+      --text: #243240;
+      --white: #ffffff;
+      --shadow: 0 10px 25px rgba(31, 60, 91, 0.12);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+      line-height: 1.65;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      padding: 56px 20px 44px;
+    }
+
+    .wrap {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.24);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+    h1 { font-size: 2.4rem; margin-bottom: 14px; }
+    h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 14px; }
+    h3 { font-size: 1.2rem; color: var(--navy); }
+
+    .hero p { font-size: 1.08rem; margin-bottom: 18px; }
+
+    .hero-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      background: rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 118px;
+    }
+
+    .mini strong { display: block; font-size: 1rem; margin-bottom: 8px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #dbe7f5;
+    }
+
+    nav .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 20px;
+      justify-content: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    nav a:hover { background: var(--sky); }
+
+    main { padding: 30px 20px 60px; }
+
+    section {
+      margin: 28px auto;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .section-intro {
+      font-size: 1.03rem;
+      margin-bottom: 22px;
+    }
+
+    .callout {
+      background: var(--sky);
+      border-left: 6px solid var(--blue);
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .grid-2, .grid-3 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      border-radius: 18px;
+      padding: 20px;
+      background: #fbfdff;
+      border: 1px solid #dde9f5;
+      height: 100%;
+    }
+
+    .card.sky { background: var(--sky); }
+    .card.mint { background: var(--mint); }
+    .card.coral { background: var(--coral); }
+    .card.lavender { background: var(--lavender); }
+
+    ul { padding-left: 22px; }
+    li { margin-bottom: 10px; }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      background: white;
+      box-shadow: inset 0 0 0 1px rgba(31,60,91,0.08);
+    }
+
+    .strategy {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px;
+      margin-top: 12px;
+      border: 1px solid rgba(31,60,91,0.08);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      background: #eef5fc;
+      color: var(--navy);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.92rem;
+    }
+
+    .family-box {
+      border-top: 4px solid var(--gold);
+      background: #fffdf6;
+    }
+
+    .reg-box {
+      border-top: 4px solid #7fc49b;
+      background: #f7fffb;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .timeline .card { position: relative; overflow: hidden; }
+    .timeline .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 7px;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+    }
+
+    .reference-list li { margin-bottom: 14px; }
+
+    footer {
+      text-align: center;
+      color: #506274;
+      padding: 10px 20px 40px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .grid-2, .grid-3, .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      h1 { font-size: 2rem; }
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <div class="badge">Resource website for educators of 3rd and 4th graders</div>
+        <h1>Supporting Social-Emotional Learning in 3rd and 4th Grade</h1>
+        <p>
+          Students in grades 3 and 4 are building friendships, self-awareness, empathy, and emotional control while becoming more independent learners. This website helps educators connect child development research to practical classroom strategies and home-school partnerships.
+        </p>
+        <p>
+          Although 3rd and 4th graders are in <strong>middle childhood</strong>, their current social and emotional development is shaped by experiences that began <strong>before birth</strong> and continued through the early years of life.
+        </p>
+        <div class="pill-row">
+          <div class="pill">Prenatal influences matter</div>
+          <div class="pill">Early experiences shape later coping</div>
+          <div class="pill">SEL can be taught every day</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <svg viewBox="0 0 520 320" width="100%" aria-label="Illustration of students learning social emotional skills" role="img">
+          <rect x="0" y="0" width="520" height="320" rx="28" fill="#eef6ff"></rect>
+          <circle cx="116" cy="106" r="38" fill="#ffd9b3"></circle>
+          <circle cx="262" cy="95" r="38" fill="#ffd9b3"></circle>
+          <circle cx="402" cy="113" r="38" fill="#ffd9b3"></circle>
+          <rect x="78" y="148" width="78" height="92" rx="18" fill="#f4c95d"></rect>
+          <rect x="223" y="138" width="78" height="102" rx="18" fill="#7fc49b"></rect>
+          <rect x="363" y="154" width="78" height="86" rx="18" fill="#8fb3e8"></rect>
+          <rect x="110" y="70" width="12" height="14" rx="6" fill="#243240"></rect>
+          <rect x="256" y="60" width="12" height="14" rx="6" fill="#243240"></rect>
+          <rect x="396" y="77" width="12" height="14" rx="6" fill="#243240"></rect>
+          <path d="M100 115 Q116 128 132 115" stroke="#243240" stroke-width="4" fill="none" stroke-linecap="round"></path>
+          <path d="M246 104 Q262 117 278 104" stroke="#243240" stroke-width="4" fill="none" stroke-linecap="round"></path>
+          <path d="M386 123 Q402 136 418 123" stroke="#243240" stroke-width="4" fill="none" stroke-linecap="round"></path>
+          <rect x="162" y="215" width="196" height="16" rx="8" fill="#1f3c5b" opacity="0.2"></rect>
+          <circle cx="180" cy="70" r="22" fill="#ffffff"></circle>
+          <path d="M170 71 l7 7 l13 -16" stroke="#4f83c2" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+          <circle cx="343" cy="61" r="22" fill="#ffffff"></circle>
+          <path d="M332 68 Q343 54 354 68 Q350 79 343 82 Q336 79 332 68" fill="#ff7f7f"></path>
+        </svg>
+        <div class="hero-grid">
+          <div class="mini">
+            <strong>What 3rd/4th graders need</strong>
+            Predictable routines, emotional language, friendship support, and chances to practice problem-solving.
+          </div>
+          <div class="mini">
+            <strong>Teacher role</strong>
+            Model calm responses, teach SEL directly, and partner with families to reinforce skills.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#why-it-matters">Why It Matters</a>
+      <a href="#stages">Developmental Stages</a>
+      <a href="#self-regulation">Self-Regulation</a>
+      <a href="#families">Family Support</a>
+      <a href="#references">References</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="why-it-matters">
+      <h2>Why Social-Emotional Learning Matters in 3rd and 4th Grade</h2>
+      <p class="section-intro">
+        By middle childhood, students are expected to manage stronger emotions, work in groups, follow multi-step directions, handle peer conflict, and recover from disappointment. SEL supports academic learning because students who feel safe, connected, and emotionally supported are better able to focus, persist, and participate.
+      </p>
+
+      <div class="grid-2">
+        <div class="card sky">
+          <h3>How prenatal development and care can affect later social-emotional growth</h3>
+          <ul>
+            <li>Healthy prenatal care supports brain development before birth, which lays a foundation for later attention, emotional responses, and stress management.</li>
+            <li>Prenatal stress, poor nutrition, substance exposure, and limited medical care can increase risk for later difficulties with emotional regulation, attention, and behavior.</li>
+            <li>These factors do <strong>not</strong> determine a child’s future, but they can influence how much support the child may need as they grow.</li>
+          </ul>
+        </div>
+        <div class="card mint">
+          <h3>How early childhood experiences affect adolescent social and emotional development</h3>
+          <ul>
+            <li>Warm, responsive caregiving helps children build trust, attachment, and a sense of safety.</li>
+            <li>Early opportunities to name emotions, solve conflicts, and practice routines strengthen self-control and social competence over time.</li>
+            <li>Chronic stress, trauma, inconsistent caregiving, or unmet developmental needs in the early years can make later peer relationships and emotional coping more difficult.</li>
+            <li>Protective relationships with adults at home and at school can reduce risk and promote resilience across childhood and adolescence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Big idea for educators:</strong> A 3rd or 4th grader’s behavior often reflects a long developmental story. When teachers respond with structure, empathy, and skill-building, they help students strengthen the social and emotional tools they need now and in adolescence.
+      </div>
+    </section>
+
+    <section id="stages">
+      <h2>Three Developmental Stages That Matter for 3rd and 4th Grade SEL</h2>
+      <p class="section-intro">
+        The developmental stages below show how social-emotional growth unfolds over time. The final stage, <strong>middle childhood</strong>, is the stage most directly connected to 3rd and 4th grade students.
+      </p>
+
+      <div class="timeline">
+        <div class="card coral">
+          <div class="stage-header">
+            <div class="icon">🤰</div>
+            <div>
+              <h3>Prenatal Stage</h3>
+              <p><strong>Foundation stage:</strong> brain and body systems begin developing before birth.</p>
+            </div>
+          </div>
+          <h3>Key social-emotional foundations</h3>
+          <ul>
+            <li>Development of the nervous system that later supports calming, attention, and stress responses.</li>
+            <li>Early sensitivity to maternal stress, health, and environmental conditions.</li>
+            <li>Beginnings of brain architecture that support future learning, behavior, and emotional responses.</li>
+          </ul>
+          <h3>Two classroom SEL strategies connected to this stage</h3>
+          <div class="strategy">
+            <strong>1. Development matters mini-lesson:</strong> Teach students that everyone grows differently and that brains develop over time. This helps build empathy and reduces judgment about classmates’ behavior.
+          </div>
+          <div class="strategy">
+            <strong>2. Strength-based language:</strong> Use phrases such as “skills grow with practice” and “your brain is learning a new strategy” to reinforce that development is ongoing and support can change outcomes.
+          </div>
+        </div>
+
+        <div class="card lavender">
+          <div class="stage-header">
+            <div class="icon">🧒</div>
+            <div>
+              <h3>Early Childhood</h3>
+              <p><strong>Approximate ages:</strong> 3 to 5 years</p>
+            </div>
+          </div>
+          <h3>Social-emotional milestones</h3>
+          <ul>
+            <li>Begins to identify basic emotions in self and others.</li>
+            <li>Starts cooperative play and takes turns with support.</li>
+            <li>Uses words more often than actions to express wants and feelings.</li>
+            <li>Develops growing independence while still relying on adult co-regulation.</li>
+          </ul>
+          <h3>Two classroom SEL strategies for educators</h3>
+          <div class="strategy">
+            <strong>1. Feelings check-in routine:</strong> Begin the day with an emotion chart or “How are you arriving today?” prompt so students practice naming feelings and noticing others’ emotions.
+          </div>
+          <div class="strategy">
+            <strong>2. Role-play with puppets or scenarios:</strong> Use simple social situations such as sharing supplies, losing a game, or joining a group to model problem-solving and kind responses.
+          </div>
+        </div>
+
+        <div class="card sky">
+          <div class="stage-header">
+            <div class="icon">📚</div>
+            <div>
+              <h3>Middle Childhood</h3>
+              <p><strong>Approximate ages:</strong> 8 to 11 years — includes most 3rd and 4th graders</p>
+            </div>
+          </div>
+          <h3>Social-emotional milestones</h3>
+          <ul>
+            <li>Builds stronger peer relationships and greater concern about fairness and belonging.</li>
+            <li>Compares self to others and develops a stronger self-concept.</li>
+            <li>Uses more advanced perspective-taking and empathy.</li>
+            <li>Improves emotional control but still needs coaching during stress, conflict, or frustration.</li>
+          </ul>
+          <h3>Two classroom SEL strategies for 3rd and 4th grade</h3>
+          <div class="strategy">
+            <strong>1. Collaborative problem-solving circles:</strong> Give students structured chances to discuss class challenges, listen to others, and generate fair solutions together.
+          </div>
+          <div class="strategy">
+            <strong>2. Reflection journals:</strong> Have students respond to prompts such as “What challenged me today?” “How did I handle it?” and “What could I try next time?” to build self-awareness and emotion management.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="self-regulation">
+      <h2>What Is Self-Regulation?</h2>
+      <p class="section-intro">
+        <strong>Self-regulation</strong> is the ability to manage emotions, attention, behavior, and impulses in order to meet expectations or goals. In elementary classrooms, self-regulation helps students wait, listen, persist, calm down, recover from mistakes, and respond appropriately during social situations.
+      </p>
+
+      <div class="grid-2">
+        <div class="card reg-box">
+          <h3>Examples of self-regulation in 3rd and 4th grade</h3>
+          <ul>
+            <li>A student feels angry during group work but uses a breathing strategy instead of yelling.</li>
+            <li>A child is disappointed by a grade and asks for help rather than shutting down.</li>
+            <li>A student wants to interrupt but raises a hand and waits for a turn.</li>
+            <li>A child notices feeling overwhelmed and asks for a short break before rejoining the task.</li>
+          </ul>
+        </div>
+        <div class="card family-box">
+          <h3>Why self-regulation matters</h3>
+          <ul>
+            <li>Supports learning by helping students focus and persist.</li>
+            <li>Improves peer relationships by reducing reactive behavior.</li>
+            <li>Builds independence and confidence over time.</li>
+            <li>Creates healthier responses to stress in later childhood and adolescence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 24px;">Ways teachers can model and encourage self-regulation</h3>
+      <div class="grid-3">
+        <div class="card mint">
+          <h3>1. Model calm thinking out loud</h3>
+          <p>Use statements such as, “I am feeling frustrated, so I’m going to pause and take a breath before I respond.” This shows students what regulation looks and sounds like.</p>
+        </div>
+        <div class="card sky">
+          <h3>2. Teach predictable calming routines</h3>
+          <p>Create a class reset routine with breathing, stretching, quiet reflection, or a short sensory break. Repetition helps students use the routine independently.</p>
+        </div>
+        <div class="card coral">
+          <h3>3. Scaffold problem-solving</h3>
+          <p>Use prompts like “What happened? What are you feeling? What do you need? What is one respectful next step?” so students learn how to pause before reacting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="families">
+      <h2>Strategies Families Can Use at Home</h2>
+      <p class="section-intro">
+        When home and school use similar language and routines, children are more likely to develop strong self-regulation and social-emotional skills. The ideas below are organized by the same developmental stages.
+      </p>
+
+      <div class="grid-3">
+        <div class="card family-box">
+          <h3>Prenatal stage</h3>
+          <ul>
+            <li>Encourage healthy prenatal care, stress reduction, and supportive relationships for expecting caregivers whenever possible.</li>
+            <li>Share community resources for healthcare, nutrition, and mental health support with families in need.</li>
+          </ul>
+        </div>
+        <div class="card family-box">
+          <h3>Early childhood</h3>
+          <ul>
+            <li>Use everyday feeling words at home such as happy, worried, frustrated, calm, and proud.</li>
+            <li>Practice turn-taking games, bedtime routines, and visual schedules to build predictability and emotional security.</li>
+          </ul>
+        </div>
+        <div class="card family-box">
+          <h3>Middle childhood</h3>
+          <ul>
+            <li>Hold short family check-ins where children can share one success, one challenge, and one goal.</li>
+            <li>Help children solve social problems with questions such as “What happened?” “How did the other person feel?” and “What could you do next time?”</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Home-school connection for 3rd and 4th grade:</strong> Teachers can send home a monthly SEL tip sheet with one calming strategy, one conversation starter, and one family activity such as gratitude journaling, emotion charades, or goal-setting.
+      </div>
+    </section>
+
+    <section>
+      <h2>Takeaway for Educators</h2>
+      <p>
+        Social-emotional learning is not separate from academics. For 3rd and 4th graders, SEL is part of how students learn, build friendships, manage mistakes, and see themselves as capable members of a classroom community. Educators who understand the developmental roots of student behavior are better prepared to respond with empathy, structure, and intentional instruction.
+      </p>
+      <p>
+        In other words, when teachers build emotional vocabulary, teach problem-solving, model self-regulation, and partner with families, they support children not just for one school year, but for the next stages of development as well.
+      </p>
+    </section>
+
+    <section id="references">
+      <h2>Scholarly and Professional References</h2>
+      <ul class="reference-list">
+        <li>Center on the Developing Child at Harvard University. (2011). <em>Building the Brain’s “Air Traffic Control” System: How Early Experiences Shape the Development of Executive Function.</em></li>
+        <li>Center on the Developing Child at Harvard University. (2012). <em>InBrief: Executive Function.</em></li>
+        <li>Accortt, E. E., Cao-Lei, L., & Mairesse, J. (2023). <em>Effects of prenatal stress on behavior, cognition, and psychopathology: Current knowledge and methodological considerations.</em> Frontiers in Behavioral Neuroscience.</li>
+      </ul>
+      <div class="callout">
+        These sources support the importance of early development, executive function, and self-regulation in later social-emotional outcomes. You can add APA formatting required by your instructor if needed.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Created as a free-platform-ready one-page website for educator use. Suitable for GitHub Pages, Netlify Drop, or classroom portfolio hosting.
+  </footer>
+</body>
+</html>
